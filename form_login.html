@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login</title>
+
+    <script>
+        // let nama = "Andi";
+        // alert('Selamat datang' + nama);
+
+        let mahasiswa = {
+            nama : "richo",
+            kelas : "TRPL"
+        }
+
+        // let input = prompt("Masukkan nama anda");
+
+        function tambah(a, b) {
+            let input1 = document.getElementById('a1').value;
+            let input2 = document.getElementById('a2').value;
+            let hasil = parseInt(input1) + parseInt(input2); 
+            alert(hasil);
+        }
+
+        function kurang(a, b) {
+            let input1 = document.getElementById('a1').value;
+            let input2 = document.getElementById('a2').value;
+            let hasil = parseInt(input1) - parseInt(input2); 
+            alert(hasil);
+        }
+
+        function bagi(a, b) {
+            let input1 = document.getElementById('a1').value;
+            let input2 = document.getElementById('a2').value;
+            let hasil = parseInt(input1) / parseInt(input2); 
+            alert(hasil);
+        }
+
+        console.log(mahasiswa.nama);
+        console.log(mahasiswa.kelas);
+    </script>
+
+</head>
+<body>
+<input type="text" name="angka1" id="a1">
+<input type="text" name="angka2" id="a2">
+<input type="button" value="+" onclick="tambah()">
+<input type="button" value="-" onclick="kurang()">
+<input type="button" value="/" onclick="bagi()">
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Clock</title>
+    <link rel="stylesheet" href="jam.css" />
+  </head>
+  <body>
+    <h2>Waktu Real Time</h2>
+    <div id="clock"></div>
+
+    <script>
+      function updateClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var day = now.getDate();
+        var month = now.getMonth() + 1;
+        var year = now.getFullYear();
+
+        // Menambahkan nol di depan angka jika angka tersebut hanya satu digit
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        day = day < 10 ? "0" + day : day;
+        month = month < 10 ? "0" + month : month;
+
+        var currentDate = day + "/" + month + "/" + year;
+        var currentTime = hours + ":" + minutes + ":" + seconds;
+
+        document.getElementById("clock").innerText =
+          currentTime + "\n" + "\n" + currentDate;
+      }
+
+      // Memanggil fungsi updateClock setiap satu detik
+      setInterval(updateClock, 1000);
+
+      // Memanggil fungsi updateClock saat halaman dimuat untuk pertama kali
+      updateClock();
+    </script>
+  </body>
+</html>

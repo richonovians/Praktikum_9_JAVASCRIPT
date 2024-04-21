@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoh Animasi dengan jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      #kotak {
+        width: 100px;
+        height: 100px;
+        background-color: #ffee00;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Animasi dengan jQuery</h2>
+    <button id="tombolAnimasi">Mulai Animasi</button>
+    <div id="kotak"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#tombolAnimasi").click(function () {
+          $("#kotak").animate(
+            {
+              left: "250px",
+              opacity: "0.5",
+              height: "200px",
+              width: "200px",
+            },
+            "slow"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu dengan jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      /* Style menu */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #272727;
+        overflow: hidden;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Style menu aktif */
+      .active {
+        background-color: #d0de39;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Menu dengan jQuery</h2>
+
+    <ul id="menu">
+      <li><a href="#" class="menu-link" data-target="home">Home</a></li>
+      <li>
+        <a href="#" class="menu-link" data-target="about">Tentang Kami</a>
+      </li>
+      <li><a href="#" class="menu-link" data-target="contact">Kontak</a></li>
+    </ul>
+
+    <div id="home" class="menu-content">
+      <h3>Home</h3>
+      <p>Selamat datang di halaman utama.</p>
+    </div>
+
+    <div id="about" class="menu-content" style="display: none">
+      <h3>Tentang Kami</h3>
+      <p>Ini adalah halaman tentang kami.</p>
+    </div>
+
+    <div id="contact" class="menu-content" style="display: none">
+      <h3>Kontak</h3>
+      <p>Silakan hubungi kami di sini.</p>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Sembunyikan semua konten menu kecuali yang pertama
+        $(".menu-content:not(:first)").hide();
+
+        // Tambahkan event click pada setiap link menu
+        $(".menu-link").click(function () {
+          var target = $(this).data("target");
+
+          // Hapus kelas active dari semua link menu
+          $(".menu-link").removeClass("active");
+          // Tambahkan kelas active ke link menu yang diklik
+          $(this).addClass("active");
+
+          // Sembunyikan semua konten menu
+          $(".menu-content").hide();
+
+          // Tampilkan konten menu yang sesuai dengan link yang diklik
+          $("#" + target).show();
+        });
+      });
+    </script>
+  </body>
+</html>

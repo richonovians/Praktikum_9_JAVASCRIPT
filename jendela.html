@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jendela Basic Dialog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    />
+    <style>
+      body {
+        background-color: #434500;
+      }
+
+      #bukaDialog {
+        background-color: #010101;
+        color: #fff;
+      }
+
+      #dialog {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="bukaDialog">Buka Jendela Dialog</button>
+
+    <div id="dialog" title="Basic Dialog">
+      <p>Ini adalah jendela basic dialog dengan menggunakan jQuery.</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#bukaDialog").click(function () {
+          $("#dialog").dialog();
+        });
+      });
+    </script>
+  </body>
+</html>
